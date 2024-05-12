@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('/read',[ListController::class, 'read']);
+ route::get('/add',[ListController::class, 'add']);
+ route::post('/create',[ListController::class, 'create']);
+ route::get('/edit/{id}',[ListController::class, 'edit']);
+ route::put('/update/{id}',[ListController::class, 'update']);
+ route::delete('/delete/{id}',[ListController::class, 'delete']);
